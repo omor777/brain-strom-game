@@ -64,7 +64,7 @@ function createGridCard() {
 
     const cardBack = document.createElement("div");
     cardBack.classList.add("card-back");
-    cardBack.style.backgroundImage = `url(${gameCard[i].img})`;
+    cardBack.style.backgroundImage =`url(${gameCard[i].img})`;
 
     card.appendChild(cardContent);
     cardContent.appendChild(cardFront);
