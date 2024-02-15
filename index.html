@@ -18,11 +18,39 @@
           content-visibility: auto;
         }
       }
+      @layer components {
+        .card {
+          @apply size-16 lg:size-40 bg-transparent [perspective:600px];
+        }
+        .card-content {
+          @apply relative w-full h-full shadow-xl duration-700 [transform-style:preserve-3d];
+        }
+        .card-front {
+          @apply text-4xl text-white bg-pink-500 absolute w-full h-full rounded-md [backface-visibility:hidden] cursor-pointer;
+        }
+        .card-back {
+          @apply text-4xl text-white absolute w-full h-full rounded-md [transform:rotateY(180deg)] [backface-visibility:hidden]  bg-slate-600 bg-no-repeat bg-center bg-contain;
+        }
+      }
     </style>
     <!-- custom css -->
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+    <section
+      class="bg-slate-700 min-h-screen flex flex-col items-center justify-center"
+    >
+      <h1 class="text-2xl lg:text-5xl font-bold text-white">
+        Match The <span class="text-yellow-400">Images</span>
+      </h1>
+      <div
+        id="parent-div"
+        class="grid grid-cols-4 gap-4 lg:gap-8 mt-6 lg:mt-16"
+      ></div>
+      <button onclick="playAgain()" class="btn btn-lg mt-12 btn-warning">
+        Play Again
+      </button>
+    </section>
     <script src="js/app.js"></script>
   </body>
 </html>
